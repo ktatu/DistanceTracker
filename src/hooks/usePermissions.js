@@ -11,12 +11,6 @@ const usePermissions = () => {
                 setErrorMsg("Foreground location permission required")
                 return
             }
-
-            const backgroundPermObj = await Location.requestBackgroundPermissionsAsync()
-            if (backgroundPermObj.status !== "granted") {
-                setErrorMsg("Background location permission required")
-                return
-            }
         }
 
         getPermissions()

@@ -11,13 +11,17 @@ const styles = StyleSheet.create({
     },
     text: {
         fontFamily: "B612_400Regular",
-        fontSize: 32,
+        fontSize: 24,
     },
 })
 
-const TrackButton = ({ buttonText }) => {
+const TrackButton = ({ buttonText, toggleTracking }) => {
     return (
-        <Pressable style={styles.button_style}>
+        <Pressable
+            style={styles.button_style}
+            onLongPress={toggleTracking}
+            delayLongPress={200}
+        >
             <Text style={styles.text}>{buttonText}</Text>
         </Pressable>
     )

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     },
 })
 
-const DistanceInput = ({ editable, distance, setDistance }) => {
+const IntervalInput = ({ editable, interval, setInterval }) => {
     const inputRef = useRef(null)
 
     const handlePress = () => {
@@ -31,20 +31,20 @@ const DistanceInput = ({ editable, distance, setDistance }) => {
         <View>
             <Pressable onPress={handlePress}>
                 <View style={styles.container}>
-                    <Text style={styles.text}>Distance: </Text>
+                    <Text style={styles.text}>Interval: </Text>
                     <TextInput
                         keyboardType="numeric"
-                        onChangeText={setDistance}
+                        onChangeText={setInterval}
                         ref={inputRef}
                         style={styles.text}
-                        value={String(distance)}
+                        value={String(interval)}
                         editable={editable}
                     />
-                    <Text style={styles.text}>km</Text>
+                    <Text style={styles.text}>m</Text>
                 </View>
             </Pressable>
         </View>
     )
 }
 
-export default DistanceInput
+export default IntervalInput
